@@ -6,6 +6,7 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
+  Image,
 } from 'react-native';
 import React from 'react';
 import Pie from 'react-native-pie';
@@ -24,11 +25,11 @@ const Chart = () => {
       style={{
         justifyContent: 'center',
         alignItems: 'center',
-        paddingVertical: 20,
+        paddingVertical: 15,
       }}>
       <Pie
-        radius={140}
-        innerRadius={134}
+        radius={120}
+        innerRadius={115}
         sections={[
           {
             percentage: 25,
@@ -38,11 +39,11 @@ const Chart = () => {
         backgroundColor={COLORS.percent}
       />
       <View style={styles.gauge}>
-        <Text style={{fontSize: 16, color: '#eee'}}>Mục tiêu hằng ngày</Text>
+        <Text style={{fontSize: 16, color: '#eee'}}> Mục tiêu hằng ngày </Text>
         <View style={{flexDirection: 'row', paddingVertical: 8}}>
-          <Text style={styles.gaugeText}>500</Text>
-          <Text style={styles.gaugeText}>/</Text>
-          <Text style={styles.gaugeText}>2000ml</Text>
+          <Text style={styles.gaugeText}> 500 </Text>
+          <Text style={styles.gaugeText}> /</Text>
+          <Text style={styles.gaugeText}> 2000 ml </Text>
         </View>
         <View
           style={{
@@ -72,21 +73,106 @@ const Header = () => {
   return (
     <View style={{justifyContent: 'center', alignItems: 'center'}}>
       <Chart />
-
-      <View style={{flexDirection: 'row'}}>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
         <TouchableOpacity
           style={{
             backgroundColor: COLORS.white,
-
-            height: 50,
+            width: 24,
+            height: 24,
+            borderRadius: 12,
+            padding: 0,
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <EvilIcons name="refresh" color={COLORS.primary} size={32} />
+          <EvilIcons
+            // styles={{position: 'absolute', top: 0}}
+            name="refresh"
+            color={COLORS.primary}
+            size={24}
+          />
         </TouchableOpacity>
-
-        <Text>Cốc</Text>
+        <Text
+          style={{
+            marginLeft: 10,
+            fontSize: 18,
+            color: COLORS.white,
+            fontWeight: 'bold',
+          }}>
+          Cốc
+        </Text>
       </View>
+
+      <TouchableOpacity
+        style={{
+          paddingVertical: 6,
+          paddingHorizontal: 12,
+          backgroundColor: COLORS.white,
+          borderRadius: 20,
+          marginTop: 18,
+        }}>
+        <Text style={{color: COLORS.primary, fontSize: 16, fontWeight: 'bold'}}>
+          +400 ml
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const ListWater = () => {
+  return (
+    <View
+      style={{
+        marginTop: 14,
+        paddingTop: 14,
+        paddingHorizontal: 12,
+        flex: 1,
+        backgroundColor: COLORS.background,
+      }}>
+      <Text style={{fontSize: 16, fontWeight: 'bold'}}>Lịch sử</Text>
+      <ScrollView style={{marginTop: 10}}>
+        <View
+          style={{
+            paddingHorizontal: 12,
+            paddingVertical: 12,
+            marginVertical: 12,
+            backgroundColor: COLORS.white,
+            borderRadius: 28,
+            height: 'auto',
+            justifyContent: 'center',
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 1,
+            },
+            shadowOpacity: 0.22,
+            shadowRadius: 2.22,
+
+            elevation: 3,
+          }}>
+          <Image
+            style={{
+              resizeMode: 'stretch',
+              height: 40,
+              width: 40,
+            }}
+            source={require('../../../Image/waterCup.png')}
+          />
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              marginHorizontal: 16,
+            }}>
+            <Text style={{fontSize: 16}}>400 ml</Text>
+            <Text style={{fontSize: 16}}>09:14</Text>
+          </View>
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -96,7 +182,6 @@ const ControlWater = () => {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.primary}}>
       <StatusBar translucent backgroundColor={COLORS.transparent} />
-
       {/* button Back */}
       <View style={{marginTop: 30, marginHorizontal: 15}}>
         <TouchableOpacity
@@ -110,10 +195,9 @@ const ControlWater = () => {
           <MaterialIcons name="arrow-back" color="#eee" size={28} />
         </TouchableOpacity>
       </View>
-
       {/* phan bieu do nuoc */}
-
       <Header />
+      <ListWater />
     </SafeAreaView>
   );
 };
