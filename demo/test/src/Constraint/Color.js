@@ -9,5 +9,6 @@ const COLORS = {
     grey: '#999999',
     silver: '#DDDDDD',
     yellow: '#f0d213',
+    grey_background: '#E7E6E1',
 };
 export default COLORS;

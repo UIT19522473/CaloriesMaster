@@ -123,6 +123,71 @@ const Header = () => {
   );
 };
 
+const ItemWater = () => {
+  return (
+    <View
+      style={{
+        width: '100%',
+        paddingHorizontal: 18,
+        paddingVertical: 10,
+        marginVertical: 8,
+        backgroundColor: COLORS.white,
+        borderRadius: 28,
+        height: 'auto',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
+
+        elevation: 3,
+      }}>
+      <Image
+        style={{
+          resizeMode: 'stretch',
+          height: 35,
+          width: 45,
+        }}
+        source={require('../../../Image/cup_water_full.png')}
+      />
+      <View
+        style={{
+          flex: 1,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          marginHorizontal: 20,
+        }}>
+        <Text style={{fontSize: 16}}>400 ml</Text>
+        <Text style={{fontSize: 16}}>09:14</Text>
+      </View>
+
+      <View
+        style={{
+          // padding: 2,
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: 4,
+          with: 28,
+          height: 28,
+          borderRadius: 100,
+          backgroundColor: COLORS.grey_background,
+        }}>
+        <Ionicons
+          // styles={{position: 'absolute', top: 0}}
+          name="close"
+          color={COLORS.grey}
+          size={20}
+        />
+      </View>
+    </View>
+  );
+};
+
 const ListWater = () => {
   return (
     <View
@@ -135,43 +200,11 @@ const ListWater = () => {
       }}>
       <Text style={{fontSize: 16, fontWeight: 'bold'}}>Lịch sử</Text>
       <ScrollView style={{marginTop: 10}}>
-        <View
-          style={{
-            paddingHorizontal: 12,
-            paddingVertical: 12,
-            marginVertical: 12,
-            backgroundColor: COLORS.white,
-            borderRadius: 28,
-            height: 'auto',
-            justifyContent: 'center',
-            shadowColor: '#000',
-            shadowOffset: {
-              width: 0,
-              height: 1,
-            },
-            shadowOpacity: 0.22,
-            shadowRadius: 2.22,
-
-            elevation: 3,
-          }}>
-          <Image
-            style={{
-              resizeMode: 'stretch',
-              height: 40,
-              width: 40,
-            }}
-            source={require('../../../Image/waterCup.png')}
-          />
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginHorizontal: 16,
-            }}>
-            <Text style={{fontSize: 16}}>400 ml</Text>
-            <Text style={{fontSize: 16}}>09:14</Text>
-          </View>
-        </View>
+        <ItemWater />
+        <ItemWater />
+        <ItemWater />
+        <ItemWater />
+        <ItemWater />
       </ScrollView>
     </View>
   );
