@@ -1,28 +1,33 @@
 import React from 'react';
-import {View, Button, Text, StyleSheet} from 'react-native';
+import {View, Button, Text, StyleSheet, ImageBackground} from 'react-native';
+import SignInButton from '../Component/cpnLogin/Body/SignInButton';
+
+
+import background_image from '../Image/background_login.png';
+
 
 const Login = ({navigation}) => {
   return (
-    <View style={styles.center}>
-      <Text>This is the exercise</Text>
-      <Button
-        onPress={() => {
-          navigation.navigate('MainBottomTab');
-        }}
-        title="Go to About Screen"
-      />
-    </View>
+    <View style={styles.container}>
+      <ImageBackground source={background_image} resizeMode="cover" style={styles.image}>
+          <SignInButton></SignInButton>
+      </ImageBackground>
+  </View>
   );
 };
 
 const styles = StyleSheet.create({
-  center: {
+  container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center',
-    backgroundColor: 'blue',
   },
+  image: {
+    flex: 1,
+    justifyContent: "center"
+  }
 });
 
+
 export default Login;
+// onPress={() => {
+//   navigation.navigate('MainBottomTab');
+// }}
