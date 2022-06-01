@@ -1,14 +1,11 @@
-import {View, StyleSheet, Text, Image, Dimensions, Button} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 import React from 'react';
 import COLORS from '../../../Constraint/Color';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import AddWater from '../Body/BodyWater';
 import ListCard from './BodyListCard';
 import ChartWeight from './BodyChart';
 import {useNavigation} from '@react-navigation/native';
-import {LineChart} from 'react-native-chart-kit';
 
 const TitleWater = () => {
   const navigation = useNavigation();

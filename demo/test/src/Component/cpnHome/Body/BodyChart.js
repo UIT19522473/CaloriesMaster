@@ -1,10 +1,11 @@
 import {View, StyleSheet, Text, Image, Dimensions} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import COLORS from '../../../Constraint/Color';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import {LineChart} from 'react-native-chart-kit';
+import ModalScreen from './Modal';
 
 const LineWeightChart = () => {
   const data = {
@@ -54,6 +55,11 @@ const LineWeightChart = () => {
 };
 
 const ChartWeight = () => {
+  const [modalWeight, setModalWeight] = useState(false);
+  const handleShowModalWeight = () => {
+    setModalWeight(true);
+  };
+
   return (
     <View
       style={{
@@ -93,10 +99,16 @@ const ChartWeight = () => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <MaterialIcons name="add" color={COLORS.black} size={20} />
+          <MaterialIcons
+            onPress={handleShowModalWeight}
+            name="add"
+            color={COLORS.black}
+            size={20}
+          />
         </View>
       </View>
       <LineWeightChart />
+      <ModalScreen modalWeight={modalWeight} setModalWeight={setModalWeight} />
     </View>
   );
 };

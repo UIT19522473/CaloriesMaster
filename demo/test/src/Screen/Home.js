@@ -11,6 +11,7 @@ import COLORS from '../Constraint/Color';
 import {ScrollView} from 'react-native-gesture-handler';
 import Header from '../Component/cpnHome/Header';
 import Body from '../Component/cpnHome/Body';
+// import ModalScreen from '../Component/cpnHome/Header/Modal';
 
 const HEADER_HEIGHT = 330;
 
@@ -25,6 +26,7 @@ const Home = () => {
       <ScrollView style={styles.body}>
         <Body heightHeader={HEADER_HEIGHT} />
       </ScrollView>
+
     </SafeAreaView>
   );
 };
