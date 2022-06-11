@@ -66,7 +66,7 @@ const Body = () => {
           borderBottomLeftRadius: 50,
           borderBottomRightRadius: 50,
           backgroundColor: COLORS.primary,
-          marginTop: 330,
+          // marginTop: 328,
         }}></View>
 
       <View
