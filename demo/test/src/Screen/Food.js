@@ -4,6 +4,7 @@ import { View, Button, Text, StyleSheet } from 'react-native';
 import FoodHeader from '../Component/cpnFood/Header/FoodHeader'
 import FoodCard from '../Component/cpnFood/Body/FoodCard';
 import FoodList from '../Component/cpnFood/Body/FoodList';
+import FoodAndMaterialNavigator from '../Component/cpnFood/Body/FoodAndMaterialNavigator';
 
 const Food = () => {
   return (
@@ -14,8 +15,8 @@ const Food = () => {
       </View>
 
       <View style={styles.body}>
-        {/* <FoodCard foodTitle='Cơm gà' rationValue='1' rationUnit='khẩu phần ăn' foodCal='300' /> */}
-        <FoodList/>
+        {/* <FoodList/> */}
+        <FoodAndMaterialNavigator/>
       </View>
 
     </View>
@@ -27,10 +28,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    flex: 0.26
+    flex: 0.25
   },
   body: {
-    flex: 0.74
+    flex: 0.75
   }
 });
 

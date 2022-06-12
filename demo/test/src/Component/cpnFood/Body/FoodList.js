@@ -7,11 +7,8 @@ export default class FoodList extends Component {
     return (
       <View style={styles.container}>
 
-        <FoodCard foodTitle='Cơm gà' rationValue='1' rationUnit='khẩu phần ăn' foodCal='300' />
+        <FoodCard foodTitle='Cơm gà' rationValue='1' rationUnit='khẩu phần ăn' foodCal='300'/>
 
-
-
-        
       </View>
     )
   }
@@ -22,6 +19,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#F2F2F2',
         alignItems: 'center',
         flex: 1,
-        paddingTop: 20,
+        paddingTop: 20
     }
 })
