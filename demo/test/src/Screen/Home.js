@@ -1,64 +1,3 @@
-// import React, {Component, useRef} from 'react';
-// import {
-//   StyleSheet,
-//   SafeAreaView,
-//   StatusBar,
-//   View,
-//   Text,
-//   Animated,
-// } from 'react-native';
-// import COLORS from '../Constraint/Color';
-// import {ScrollView} from 'react-native-gesture-handler';
-// import Header from '../Component/cpnHome/Header';
-// import Body from '../Component/cpnHome/Body';
-// // import Animated from 'react-native-reanimated';
-
-// const HEADER_HEIGHT = 330;
-
-// const HEADER_MAX_HEIGHT = 1000;
-// const HEADER_MIN_HEIGHT = 50;
-
-// const Home = () => {
-//   return (
-//     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
-//       <StatusBar translucent backgroundColor={COLORS.transparent} />
-//       <Animated.View style={[styles.header, {height: 330}]}>
-//         <Header />
-//       </Animated.View>
-//       <Animated.ScrollView
-//         // scrollEventThrottle={16}
-//         // onScroll={Animated.event(
-//         //   [{nativeEvent: {contentOffset: {y: scrollPosition}}}],
-//         //   {useNativeDriver: true},
-//         // )}
-//         style={styles.body}>
-//         <Body heightHeader={HEADER_HEIGHT} />
-//       </Animated.ScrollView>
-//     </SafeAreaView>
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   header: {
-//     backgroundColor: COLORS.primary,
-
-//     width: '100%',
-//     position: 'absolute',
-//     // zIndex: 1000,
-//     // elevation: 1000,
-//     left: 0,
-//     right: 0,
-//     top: 0,
-//     overflow: 'hidden',
-//   },
-//   body: {
-//     width: '100%',
-//     marginTop: 330,
-//   },
-// });
-
-// export default Home;
-
 import React, {Component} from 'react';
 import {
   Animated,
@@ -75,6 +14,40 @@ import Header from '../Component/cpnHome/Header';
 const HEADER_MAX_HEIGHT = 330;
 const HEADER_MIN_HEIGHT = 0;
 const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
+import {FloatingAction} from 'react-native-floating-action';
+
+const actions = [
+  {
+    text: 'Tập luyện',
+    // icon: require('./images/ic_accessibility_white.png'),
+    name: 'Exc',
+    position: 1,
+  },
+  {
+    text: 'Bữa Phụ',
+    // icon: require('./images/ic_language_white.png'),
+    name: 'Other',
+    position: 2,
+  },
+  {
+    text: 'Bữa Tối',
+    // icon: require('./images/ic_room_white.png'),
+    name: 'Night',
+    position: 3,
+  },
+  {
+    text: 'Bữa Trưa',
+    // icon: require('./images/ic_videocam_white.png'),
+    name: 'Afternoon',
+    position: 4,
+  },
+  {
+    text: 'Bữa sáng',
+    // icon: require('./images/ic_videocam_white.png'),
+    name: 'Morning',
+    position: 5,
+  },
+];
 
 export default class ScrollableHeader extends Component {
   constructor(props) {
@@ -103,12 +76,20 @@ export default class ScrollableHeader extends Component {
             <Body />
           </View>
         </ScrollView>
-
         <Animated.View style={[styles.header, {height: headerHeight}]}>
           <StatusBar translucent backgroundColor={COLORS.transparent} />
 
           <Header />
         </Animated.View>
+        <FloatingAction
+          actions={actions}
+          onPressItem={name => {
+            console.log(`selected button: ${name}`);
+          }}
+          // overlayColor={COLORS.primary}
+          color={COLORS.primary}
+          // textColor={COLORS.primary}
+        />
       </View>
     );
   }
@@ -132,5 +113,6 @@ const styles = StyleSheet.create({
   body: {
     width: '100%',
     marginTop: HEADER_MAX_HEIGHT,
+    marginBottom: 50,
   },
 });

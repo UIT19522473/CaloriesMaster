@@ -5,6 +5,7 @@ import Food from './Food';
 import Exercise from './Exercise';
 import Info from './Info';
 import Login from './Login';
+import Target from './Target';
 
 // import DemoBack from '../Component/cpnHome/Body/DemoBack';
 import ControlWater from '../Component/cpnHome/Body/ControlWater';
@@ -103,6 +104,7 @@ const HomeAbout = () => {
       initialRouteName="Home">
       <stackHome.Screen name="HomeAbout" component={Home} />
       <stackHome.Screen name="ControlWater" component={ControlWater} />
+      <stackHome.Screen name="Target" component={Target} />
     </stackHome.Navigator>
   );
 };
