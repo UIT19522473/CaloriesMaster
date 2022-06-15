@@ -10,7 +10,7 @@ export default class FoodHeader extends Component {
       <View style={styles.container}>
         <Text style={styles.titleText}>Món ăn của riêng bạn</Text>
         <View style={styles.buttonList}>
-          <Searchbar style={styles.searhBar} placeholder="Tìm kiếm..." inputStyle={styles.textSearchBar}></Searchbar>
+          <Searchbar style={styles.searchBar} placeholder="Tìm kiếm..." inputStyle={styles.textSearchBar}></Searchbar>
           <TouchableOpacity style={styles.addButton}>
             <Icon name='plus' size={35} color={'#58C1C9'} />
           </TouchableOpacity>
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   buttonList: {
     flexDirection: 'row'
   },
-  searhBar: {
+  searchBar: {
     marginLeft: 15,
     width: '75%',
     borderRadius: 40,

@@ -1,23 +1,36 @@
 import React from 'react';
 import {View, Button, Text, StyleSheet} from 'react-native';
+import ExerciseList from '../Component/cpnExercise/Body/ExerciseList';
+import ExerciseHeader from '../Component/cpnExercise/Header/ExerciseHeader';
 
 const Exercise = () => {
   return (
-    <View style={styles.center}>
-      <Text>This is the exercise</Text>
-      <Button title="Go to About Screen" />
+    <View style={styles.container}>
+
+      <View style={styles.header}>
+        <ExerciseHeader/>
+      </View>
+
+      <View style={styles.body}>
+        <ExerciseList/>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  center: {
+  container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center',
-    backgroundColor: 'pink',
+    
   },
+  header: {
+    flex: 0.295
+  },
+  body: {
+
+    flex: 0.705
+
+  }
 });
 
 export default Exercise;
