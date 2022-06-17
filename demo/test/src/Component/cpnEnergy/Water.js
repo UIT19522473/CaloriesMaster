@@ -34,7 +34,7 @@ const Water = () => {
         elevation: 5,
       }}>
       <Text style={{fontSize: 20, fontWeight: 'bold', color: COLORS.black}}>
-        Biểu đồ nước
+        Biểu đồ lượng nước
       </Text>
       <View style={{width: 320}}>
         <BarChart

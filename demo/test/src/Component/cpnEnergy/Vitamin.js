@@ -83,9 +83,9 @@ const Vitamin = () => {
           // innerRadius={115}
           donut
           data={[
-            {value: 30, color: 'rgb(84,219,234)'},
-            {value: 40, color: 'lightgreen'},
-            {value: 20, color: 'orange'},
+            {key: 1, value: 30, color: 'rgb(84,219,234)'},
+            {key: 2, value: 40, color: 'lightgreen'},
+            {key: 3, value: 20, color: 'orange'},
           ]}
           innerCircleColor="#414141"
           innerCircleBorderWidth={2}
