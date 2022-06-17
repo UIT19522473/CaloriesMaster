@@ -6,6 +6,8 @@ import Exercise from './Exercise';
 import Info from './Info';
 import Login from './Login';
 import Target from './Target';
+import UpdateBMR from './UpdateBMR';
+import Energy from './Energy';
 
 // import DemoBack from '../Component/cpnHome/Body/DemoBack';
 import ControlWater from '../Component/cpnHome/Body/ControlWater';
@@ -27,6 +29,8 @@ const Root = () => {
         screenOptions={{headerShown: false}}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="MainBottomTab" component={MainBottomTab} />
+        <Stack.Screen name="UpdateBMR" component={UpdateBMR} />
+        <Stack.Screen name="Energy" component={Energy} />
       </Stack.Navigator>
     </NavigationContainer>
   );
