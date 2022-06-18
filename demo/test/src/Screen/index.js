@@ -8,6 +8,8 @@ import Login from './Login';
 import Target from './Target';
 import UpdateBMR from './UpdateBMR';
 import Energy from './Energy';
+import Test from './Test';
+// import FirebaseConfig from './FirebaseConfig';
 
 // import DemoBack from '../Component/cpnHome/Body/DemoBack';
 import ControlWater from '../Component/cpnHome/Body/ControlWater';
@@ -96,6 +98,10 @@ function MainBottomTab() {
           ),
         }}
       />
+
+      <Tab.Screen name="Test" component={Test} />
+
+      {/* <Tab.Screen name="firebase" component={FirebaseConfig} /> */}
     </Tab.Navigator>
   );
 }
