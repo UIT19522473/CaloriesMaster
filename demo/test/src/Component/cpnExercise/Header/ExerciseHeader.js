@@ -31,13 +31,13 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
         paddingLeft: 25,
-        paddingBottom: 23
+        paddingBottom: 15
         
     },
     searchBar: {
         width: '90%',
         borderRadius: 30,
-        height: '20%',
+        height: '25%',
     },
     addExerciseContainer: {
         flexDirection: 'row',

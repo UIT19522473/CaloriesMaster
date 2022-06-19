@@ -2,6 +2,7 @@ import {View, Text, Image} from 'react-native';
 import React from 'react';
 import Home from './Home';
 import Food from './Food';
+import addFood from './addFood';
 import Exercise from './Exercise';
 import Info from './Info';
 import Login from './Login';
@@ -60,7 +61,7 @@ function MainBottomTab() {
         }}
       />
       <Tab.Screen
-        name="Food"
+        name="addFood"
         component={Food}
         options={{
           tabBarIcon: ({focused}) => (

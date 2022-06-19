@@ -9,13 +9,13 @@ export default class FoodCard extends Component {
             <View style={styles.container}>
 
                 <View>
-                    <Text style={[styles.textCard, styles.titleCard]}> {this.props.foodTitle} </Text>
+                    <Text style={styles.titleCard}> {this.props.foodTitle} </Text>
                     <Text style={styles.textCard}> {this.props.rationValue + " " + this.props.rationUnit + " - " + this.props.foodCal + " calo"} </Text>
                 </View>
 
                 <View style={styles.iconContainer}>
                     <TouchableOpacity style={styles.roundAddIcon}>
-                        <Icon name='add-sharp' size={35} color={'black'}/>
+                        <Icon name='add-sharp' size={23} color={'grey'}/>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -37,12 +37,15 @@ const styles = StyleSheet.create({
     },
 
     textCard : {
-        fontSize: 16,
+        fontSize: 17,
         color: COLORS.black
+        
     },
 
     titleCard: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontSize: 17,
+        color: COLORS.black
     },
 
     roundAddIcon: {

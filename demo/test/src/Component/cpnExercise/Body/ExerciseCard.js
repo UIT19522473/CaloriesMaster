@@ -15,7 +15,7 @@ export default class ExerciseCard extends Component {
 
         <View style={styles.iconContainer}>
             <TouchableOpacity style={styles.roundAddIcon}>
-                <Icon name='add-sharp' size={23} color={'black'}/>
+                <Icon name='add-sharp' size={23} color={'grey'}/>
             </TouchableOpacity>
         </View>
     </View>
@@ -36,12 +36,13 @@ const styles = StyleSheet.create({
     },
 
     textCard : {
-        fontSize: 16,
-        color: COLORS.black
+        fontSize: 18,
+        color: COLORS.black,
     },
 
     titleCard: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontFamily: 'sans-serif'
     },
 
     roundAddIcon: {

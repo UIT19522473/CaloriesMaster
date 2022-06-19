@@ -2,7 +2,7 @@ import { Text, StyleSheet, View, TouchableOpacity } from 'react-native'
 import React, { Component } from 'react'
 import COLORS from '../../../Constraint/Color'
 import { Searchbar } from 'react-native-paper'
-import Icon from 'react-native-vector-icons/Feather'
+import Icon from 'react-native-vector-icons/Entypo'
 
 export default class FoodHeader extends Component {
   render() {
@@ -12,7 +12,7 @@ export default class FoodHeader extends Component {
         <View style={styles.buttonList}>
           <Searchbar style={styles.searchBar} placeholder="Tìm kiếm..." inputStyle={styles.textSearchBar}></Searchbar>
           <TouchableOpacity style={styles.addButton}>
-            <Icon name='plus' size={35} color={'#58C1C9'} />
+            <Icon name='plus' size={28} color={'#58C1C9'} style={{ }} />
           </TouchableOpacity>
         </View>
       </View>
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primary,
     justifyContent: 'flex-end',
     paddingBottom: 15
+  
 
   },
   titleText: {
