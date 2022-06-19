@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Button, Text, StyleSheet, ImageBackground} from 'react-native';
+import {
+  View,
+  Button,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  TouchableOpacity,
+} from 'react-native';
 
 import GoogleSignInButton from '../Component/cpnLogin/Body/GoogleSignInButton';
 import FacebookSignInButton from '../Component/cpnLogin/Body/FacebookSignInButton';
@@ -25,6 +32,18 @@ const Login = ({navigation}) => {
         onPress={() => {
           navigation.navigate('MainBottomTab');
         }}></Button>
+
+      <TouchableOpacity
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: 12,
+        }}
+        onPress={() => {
+          navigation.navigate('BMR');
+        }}>
+        <Text>{'BMR >>'}</Text>
+      </TouchableOpacity>
     </View>
   );
 };

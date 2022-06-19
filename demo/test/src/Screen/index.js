@@ -8,6 +8,7 @@ import Login from './Login';
 import Target from './Target';
 import UpdateBMR from './UpdateBMR';
 import Energy from './Energy';
+import BMR from './BMR';
 import Test from './Test';
 // import FirebaseConfig from './FirebaseConfig';
 
@@ -33,6 +34,7 @@ const Root = () => {
         <Stack.Screen name="MainBottomTab" component={MainBottomTab} />
         <Stack.Screen name="UpdateBMR" component={UpdateBMR} />
         <Stack.Screen name="Energy" component={Energy} />
+        <Stack.Screen name="BMR" component={BMR} />
       </Stack.Navigator>
     </NavigationContainer>
   );

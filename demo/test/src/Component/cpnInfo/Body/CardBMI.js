@@ -40,20 +40,38 @@ const CardBMI = () => {
       </View>
       <View
         style={{
-          width: '100%',
-          // backgroundColor: COLORS.grey,
+          // width: '100%',
+          // // backgroundColor: COLORS.grey,
+
+          // marginVertical: 18,
+
+          // // marginHorizontal: 12,
+          // // shadow
+          // shadowColor: '#000',
+          // shadowOffset: {
+          //   width: 0,
+          //   height: 1,
+          // },
+          // shadowOpacity: 0.22,
+          // shadowRadius: 2.22,
+
+          // elevation: 2,
+
+          //new
+          paddingHorizontal: 8,
+          marginVertical: 24,
+          backgroundColor: COLORS.white,
           borderRadius: 12,
-          marginVertical: 18,
-          // marginHorizontal: 12,
-          // shadow
+          // height: 70,
+          justifyContent: 'center',
           shadowColor: '#000',
           shadowOffset: {
             width: 0,
-            height: 1,
+            height: 4,
           },
-          shadowOpacity: 0.2,
-          shadowRadius: 0.5,
-          elevation: 2,
+          shadowOpacity: 0.3,
+          shadowRadius: 4.65,
+          elevation: 8,
         }}>
         {/* BMI */}
         <View

@@ -10,12 +10,12 @@ const CardWater = () => {
       style={{
         flexDirection: 'column',
         width: '100%',
-        marginTop: 12,
+        marginTop: 28,
         // height: 120,
         flexDirection: 'column',
         paddingHorizontal: 12,
         // backgroundColor: COLORS.grey,
-        marginBottom: 100,
+        // marginBottom: 50,
       }}>
       <View
         style={{
@@ -43,14 +43,23 @@ const CardWater = () => {
           marginVertical: 18,
           // marginHorizontal: 12,
           // shadow
+
+          //new
+          paddingHorizontal: 4,
+          paddingVertical: 12,
+          marginVertical: 24,
+          backgroundColor: COLORS.white,
+          borderRadius: 12,
+          // height: 70,
+          justifyContent: 'center',
           shadowColor: '#000',
           shadowOffset: {
             width: 0,
-            height: 1,
+            height: 4,
           },
-          shadowOpacity: 0.22,
-          shadowRadius: 2.22,
-          elevation: 3,
+          shadowOpacity: 0.3,
+          shadowRadius: 4.65,
+          elevation: 8,
         }}>
         {/* Water */}
         <View
@@ -73,7 +82,7 @@ const CardWater = () => {
               }}>
               2000 ml
             </Text>
-            <Text style={{fontSize: 17, fontWeight: 'bold', color: 'red'}}>
+            <Text style={{fontSize: 16, fontWeight: 'bold', color: 'red'}}>
               Lượng nước bạn cần uống
             </Text>
           </View>
@@ -106,7 +115,7 @@ const CardWater = () => {
               style={{fontSize: 18, fontWeight: 'bold', color: COLORS.black}}>
               1000 ml
             </Text>
-            <Text style={{fontSize: 17, fontWeight: 'bold'}}>
+            <Text style={{fontSize: 16, fontWeight: 'bold'}}>
               Lượng nước đã uống
             </Text>
           </View>

@@ -37,22 +37,41 @@ const Vitamin = () => {
   return (
     <View
       style={{
-        marginVertical: 20,
-        marginHorizontal: 20,
-        padding: 24,
-        marginBottom: 50,
+        // marginVertical: 20,
+        // marginHorizontal: 20,
+        // padding: 24,
+        // marginBottom: 50,
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        // borderRadius: 24,
+        // //shadow
+        // shadowColor: '#000',
+        // shadowOffset: {
+        //   width: 0,
+        //   height: 2,
+        // },
+        // shadowOpacity: 0.25,
+        // shadowRadius: 3.84,
+        // elevation: 5,
+
+        //new
+        paddingHorizontal: 8,
+        paddingVertical: 16,
+        marginHorizontal: 24,
+        marginVertical: 24,
+        backgroundColor: COLORS.white,
+        borderRadius: 12,
+        // height: 70,
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 24,
-        //shadow
         shadowColor: '#000',
         shadowOffset: {
           width: 0,
-          height: 2,
+          height: 4,
         },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
+        shadowOpacity: 0.3,
+        shadowRadius: 4.65,
+        elevation: 8,
       }}>
       {/*********************    Custom Header component      ********************/}
       <Text

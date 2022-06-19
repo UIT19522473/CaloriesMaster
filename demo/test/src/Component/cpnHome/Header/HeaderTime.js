@@ -94,10 +94,11 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: COLORS.primary,
     width: '100%',
+    // marginTop: 12,
   },
   header__time: {
     color: COLORS.white,
-    paddingTop: 30,
+    paddingTop: 50,
     paddingHorizontal: 16,
     flexDirection: 'row',
     justifyContent: 'space-between',
