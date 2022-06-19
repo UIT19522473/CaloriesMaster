@@ -376,19 +376,37 @@ const ItemGlass = props => {
         setChecked(!checked);
       }}
       style={{
-        padding: 4,
+        // padding: 4,
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        // // backgroundColor: COLORS.grey,
+        // borderRadius: 10,
+        // shadowColor: '#000',
+        // shadowOffset: {
+        //   width: 0,
+        //   height: 1,
+        // },
+        // shadowOpacity: 0.22,
+        // shadowRadius: 0,
+        // elevation: 2,
+
+        paddingHorizontal: 4,
+        // paddingVertical: 16,
+        marginHorizontal: 2,
+        // marginVertical: 24,
+        backgroundColor: COLORS.white,
+        borderRadius: 12,
+        // height: 70,
         justifyContent: 'center',
         alignItems: 'center',
-        // backgroundColor: COLORS.grey,
-        borderRadius: 10,
         shadowColor: '#000',
         shadowOffset: {
           width: 0,
-          height: 1,
+          height: 4,
         },
-        shadowOpacity: 0.22,
-        shadowRadius: 0,
-        elevation: 2,
+        shadowOpacity: 0.3,
+        shadowRadius: 4.65,
+        elevation: 8,
       }}>
       <View style={{width: '100%'}}>
         <Checkbox
@@ -399,7 +417,7 @@ const ItemGlass = props => {
         />
       </View>
 
-      <View style={{height: 115, width: 115, padding: 8, alignItems: 'center'}}>
+      <View style={{height: 110, width: 110, padding: 8, alignItems: 'center'}}>
         <Image
           style={{height: '100%', width: '95%', resizeMode: 'stretch'}}
           source={choseImage(props.path)}
@@ -711,7 +729,7 @@ const ControlWater = () => {
       <StatusBar translucent backgroundColor={COLORS.transparent} />
       {/* button Back */}
 
-      <View style={{marginTop: 30, marginHorizontal: 15}}>
+      <View style={{marginTop: 50, marginHorizontal: 15}}>
         <TouchableOpacity
           style={{
             width: 'auto',

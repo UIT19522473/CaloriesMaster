@@ -73,23 +73,41 @@ const Calo = () => {
     <View
       style={{
         // width: '100%',
-        padding: 24,
-        flexDirection: 'column',
+        // padding: 24,
+        // flexDirection: 'column',
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        // marginVertical: 20,
+        // marginHorizontal: 20,
+        // borderRadius: 24,
+
+        // //shadow
+        // shadowColor: '#000',
+        // shadowOffset: {
+        //   width: 0,
+        //   height: 2,
+        // },
+        // shadowOpacity: 0.25,
+        // shadowRadius: 3.84,
+        // elevation: 5,
+
+        paddingHorizontal: 8,
+        paddingVertical: 12,
+        marginHorizontal: 24,
+        marginVertical: 24,
+        backgroundColor: COLORS.white,
+        borderRadius: 12,
+        // height: 70,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: 20,
-        marginHorizontal: 20,
-        borderRadius: 24,
-
-        //shadow
         shadowColor: '#000',
         shadowOffset: {
           width: 0,
-          height: 2,
+          height: 4,
         },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
+        shadowOpacity: 0.3,
+        shadowRadius: 4.65,
+        elevation: 8,
       }}>
       <Text
         style={{
@@ -107,7 +125,7 @@ const Calo = () => {
           padding: 12,
         }}>
         <LineChart
-          width={300}
+          width={280}
           areaChart
           data={lineData}
           startFillColor="rgb(46, 217, 255)"
