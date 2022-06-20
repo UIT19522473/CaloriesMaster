@@ -14,31 +14,15 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import {StackActions, useNavigation} from '@react-navigation/native';
 
-const ButtonChoose = ({title, des, borderWidth}) => {
+const ButtonChoose = ({title, des, target, index, setTarget}) => {
+  const border = target === index ? 2 : 0;
   return (
     <TouchableOpacity
+      onPress={() => setTarget(index)}
       style={{
-        // width: '80%',
-        // flexDirection: 'column',
-        // justifyContent: 'center',
-        // alignItems: 'center',
-        // borderColor: COLORS.primary,
-        // // borderColor: `${colorBorder}`,
-        // borderWidth: borderWidth,
-        // padding: 8,
-        // borderRadius: 36,
-        // marginVertical: 12,
-        // shadowColor: '#000',
-        // shadowOffset: {
-        //   width: 0,
-        //   height: 1,
-        // },
-        // shadowOpacity: 0.22,
-        // shadowRadius: 2.22,
-        // elevation: 3,
         width: '80%',
         borderColor: COLORS.primary,
-        borderWidth: borderWidth,
+        borderWidth: border,
         justifyContent: 'center',
         alignItems: 'center',
         paddingHorizontal: 12,
@@ -75,8 +59,14 @@ const ButtonChoose = ({title, des, borderWidth}) => {
   );
 };
 
-const Target = () => {
+const Target = ({route}) => {
   const navigation = useNavigation();
+  let data = route.params;
+  // data.new = 'demo';
+
+  const [target, setTarget] = useState(1);
+  data.target = target;
+  console.log(data);
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.primary}}>
       <StatusBar translucent backgroundColor={COLORS.transparent} />
@@ -96,7 +86,7 @@ const Target = () => {
             padding: 5,
           }}
           onPress={() => {
-            navigation.dispatch(StackActions.popToTop());
+            navigation.dispatch(StackActions.pop(1));
           }}>
           <MaterialIcons name="arrow-back" color="#eee" size={28} />
         </TouchableOpacity>
@@ -130,15 +120,49 @@ const Target = () => {
         <ButtonChoose
           title="Giảm cân"
           des="Quản lý cân nặng của bạn bằng cách ăn uống thông minh hơn"
-          borderWidth={2}
+          target={target}
+          setTarget={setTarget}
+          index={1}
         />
         {/* {/* <ButtonChoose /> */}
         <ButtonChoose
           title="Giữ nguyên cân nặng"
           des="Tối ưu cho sức khỏe của bạn"
+          target={target}
+          setTarget={setTarget}
+          index={2}
         />
-        <ButtonChoose title="Tăng cân" des="Tăng cân với eat clean" />
+        <ButtonChoose
+          title="Tăng cân"
+          des="Tăng cân với eat clean"
+          target={target}
+          setTarget={setTarget}
+          index={3}
+        />
       </View>
+
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('TKChiSo', data);
+        }}
+        style={{
+          position: 'absolute',
+          bottom: 24,
+          left: '35%',
+          backgroundColor: COLORS.primary,
+          borderRadius: 50,
+        }}>
+        <Text
+          style={{
+            paddingHorizontal: 40,
+            paddingVertical: 12,
+            fontSize: 16,
+            fontWeight: 'bold',
+            color: COLORS.white,
+          }}>
+          Tiếp tục
+        </Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };

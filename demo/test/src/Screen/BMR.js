@@ -13,6 +13,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import Slider from '@react-native-community/slider';
 import {database} from '../FirebaseConfig';
 import {set, push, ref} from 'firebase/database';
+import {StackActions, useNavigation} from '@react-navigation/native';
 
 const Submit = (phut, ngay, sex, height, weight, age) => {
   set(ref(database, 'users/tuan/BMR/'), {
@@ -32,6 +33,7 @@ const BMR = () => {
   const [height, setHeight] = useState(160);
   const [weight, setWeight] = useState(50);
   const [age, setAge] = useState(18);
+  const navigation = useNavigation();
 
   return (
     <ScrollView style={{flex: 1}}>
@@ -69,7 +71,21 @@ const BMR = () => {
         />
 
         <TouchableOpacity
-          onPress={() => Submit(phut, ngay, sex, height, weight, age)}
+          onPress={() => {
+            // Submit(phut, ngay, sex, height, weight, age),
+            navigation.navigate(
+              'Target',
+              {
+                phut: phut,
+                ngay: ngay,
+                sex: sex,
+                height: height,
+                weight: weight,
+                age: age,
+              },
+              //here
+            );
+          }}
           style={{
             position: 'absolute',
             bottom: -12,

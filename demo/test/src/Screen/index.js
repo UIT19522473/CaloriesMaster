@@ -13,6 +13,7 @@ import BMR from './BMR';
 import Test from './Test';
 import AddFood from './addFood';
 import AddMaterial from './AddMaterial';
+import TKChiSo from './TKChiSo';
 // import FirebaseConfig from './FirebaseConfig';
 
 // import DemoBack from '../Component/cpnHome/Body/DemoBack';
@@ -38,6 +39,8 @@ const Root = () => {
         <Stack.Screen name="UpdateBMR" component={UpdateBMR} />
         <Stack.Screen name="Energy" component={Energy} />
         <Stack.Screen name="BMR" component={BMR} />
+        <Stack.Screen name="Target" component={Target} />
+        <Stack.Screen name="TKChiSo" component={TKChiSo} />
         <Stack.Screen name="AddFood" component={AddFood} />
         <Stack.Screen name="AddMaterial" component={AddMaterial} />
       </Stack.Navigator>
@@ -121,7 +124,7 @@ const HomeAbout = () => {
       initialRouteName="Home">
       <stackHome.Screen name="HomeAbout" component={Home} />
       <stackHome.Screen name="ControlWater" component={ControlWater} />
-      <stackHome.Screen name="Target" component={Target} />
+      {/* <stackHome.Screen name="Target" component={Target} /> */}
     </stackHome.Navigator>
   );
 };
