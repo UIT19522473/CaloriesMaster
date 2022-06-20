@@ -12,6 +12,7 @@ import Energy from './Energy';
 import BMR from './BMR';
 import Test from './Test';
 import AddFood from './addFood';
+import AddMaterial from './AddMaterial';
 // import FirebaseConfig from './FirebaseConfig';
 
 // import DemoBack from '../Component/cpnHome/Body/DemoBack';
@@ -38,6 +39,7 @@ const Root = () => {
         <Stack.Screen name="Energy" component={Energy} />
         <Stack.Screen name="BMR" component={BMR} />
         <Stack.Screen name="AddFood" component={AddFood} />
+        <Stack.Screen name="AddMaterial" component={AddMaterial} />
       </Stack.Navigator>
     </NavigationContainer>
   );
