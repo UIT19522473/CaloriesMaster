@@ -30,7 +30,7 @@ const Login = ({ navigation }) => {
       <Button
         title="MainPage >>"
         onPress={() => {
-          navigation.navigate('MainBottomTab');
+          navigation.navigate('MainBottomTab', {package: 'hello'});
         }}></Button>
 
       <TouchableOpacity

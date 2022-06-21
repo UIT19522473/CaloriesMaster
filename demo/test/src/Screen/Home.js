@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import {
   Animated,
   Image,
@@ -48,52 +48,93 @@ const actions = [
     position: 5,
   },
 ];
+//sửa ở đây
+const Home = () => {
+  const [scrollY, setScrollY] = useState(new Animated.Value(0));
+  const headerHeight = scrollY.interpolate({
+    inputRange: [0, HEADER_SCROLL_DISTANCE],
+    outputRange: [HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT],
+    extrapolate: 'clamp',
+  });
 
-export default class ScrollableHeader extends Component {
-  constructor(props) {
-    super(props);
+  return (
+    <View style={styles.fill}>
+      <ScrollView
+        style={styles.fill}
+        scrollEventThrottle={16}
+        onScroll={Animated.event([
+          {nativeEvent: {contentOffset: {y: scrollY}}},
+        ])}>
+        <View style={styles.body}>
+          <Body />
+        </View>
+      </ScrollView>
+      <Animated.View style={[styles.header, {height: headerHeight}]}>
+        <StatusBar translucent backgroundColor={COLORS.transparent} />
 
-    this.state = {
-      scrollY: new Animated.Value(0),
-    };
-  }
+        <Header />
+      </Animated.View>
+      <FloatingAction
+        actions={actions}
+        onPressItem={name => {
+          console.log(`selected button: ${name}`);
+        }}
+        // overlayColor={COLORS.primary}
+        color={COLORS.primary}
+        // textColor={COLORS.primary}
+      />
+    </View>
+  );
+};
+export default Home;
 
-  render() {
-    const headerHeight = this.state.scrollY.interpolate({
-      inputRange: [0, HEADER_SCROLL_DISTANCE],
-      outputRange: [HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT],
-      extrapolate: 'clamp',
-    });
-    return (
-      <View style={styles.fill}>
-        <ScrollView
-          style={styles.fill}
-          scrollEventThrottle={16}
-          onScroll={Animated.event([
-            {nativeEvent: {contentOffset: {y: this.state.scrollY}}},
-          ])}>
-          <View style={styles.body}>
-            <Body />
-          </View>
-        </ScrollView>
-        <Animated.View style={[styles.header, {height: headerHeight}]}>
-          <StatusBar translucent backgroundColor={COLORS.transparent} />
+//code cũ------------------
 
-          <Header />
-        </Animated.View>
-        <FloatingAction
-          actions={actions}
-          onPressItem={name => {
-            console.log(`selected button: ${name}`);
-          }}
-          // overlayColor={COLORS.primary}
-          color={COLORS.primary}
-          // textColor={COLORS.primary}
-        />
-      </View>
-    );
-  }
-}
+// export default class ScrollableHeader extends Component {
+//   constructor(props) {
+//     super(props);
+
+//     this.state = {
+//       scrollY: new Animated.Value(0),
+//     };
+//   }
+
+//   render() {
+//     const headerHeight = this.state.scrollY.interpolate({
+//       inputRange: [0, HEADER_SCROLL_DISTANCE],
+//       outputRange: [HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT],
+//       extrapolate: 'clamp',
+//     });
+//     return (
+//       <View style={styles.fill}>
+//         <ScrollView
+//           style={styles.fill}
+//           scrollEventThrottle={16}
+//           onScroll={Animated.event([
+//             {nativeEvent: {contentOffset: {y: this.state.scrollY}}},
+//           ])}>
+//           <View style={styles.body}>
+//             <Body />
+//           </View>
+//         </ScrollView>
+//         <Animated.View style={[styles.header, {height: headerHeight}]}>
+//           <StatusBar translucent backgroundColor={COLORS.transparent} />
+
+//           <Header />
+//         </Animated.View>
+//         <FloatingAction
+//           actions={actions}
+//           onPressItem={name => {
+//             console.log(`selected button: ${name}`);
+//           }}
+//           // overlayColor={COLORS.primary}
+//           color={COLORS.primary}
+//           // textColor={COLORS.primary}
+//         />
+//       </View>
+//     );
+//   }
+// }
 
 const styles = StyleSheet.create({
   fill: {

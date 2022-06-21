@@ -5,15 +5,26 @@ import COLORS from '../../../Constraint/Color';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 const HeaderTime = () => {
-  const [date, setDate] = useState(new Date(1598051730000));
+  const [date, setDate] = useState(new Date());
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
 
-  console.log(show);
+  const [textDate, setTextDate] = useState(
+    date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear(),
+  );
+
+  // console.log(show);
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate;
     setShow(false);
+    setTextDate(
+      currentDate.getDate() +
+        '/' +
+        (currentDate.getMonth() + 1) +
+        '/' +
+        currentDate.getFullYear(),
+    );
     setDate(currentDate);
   };
 
@@ -48,7 +59,7 @@ const HeaderTime = () => {
               color="#eee"
               size={20}
             />
-            <Text style={styles.header__time__cal__text}>sss</Text>
+            <Text style={styles.header__time__cal__text}>{textDate}</Text>
           </View>
           <Icon name="angle-right" color="#eee" size={24} />
         </View>

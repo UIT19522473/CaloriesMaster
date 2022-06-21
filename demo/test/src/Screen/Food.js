@@ -1,7 +1,6 @@
-
 import React from 'react';
-import { View, Button, Text, StyleSheet } from 'react-native';
-import FoodHeader from '../Component/cpnFood/Header/FoodHeader'
+import {View, Button, Text, StyleSheet} from 'react-native';
+import FoodHeader from '../Component/cpnFood/Header/FoodHeader';
 import FoodCard from '../Component/cpnFood/Body/FoodCard';
 import FoodList from '../Component/cpnFood/Body/FoodList';
 import FoodAndMaterialNavigator from '../Component/cpnFood/Body/FoodAndMaterialNavigator';
@@ -9,16 +8,10 @@ import FoodAndMaterialNavigator from '../Component/cpnFood/Body/FoodAndMaterialN
 const Food = () => {
   return (
     <View style={styles.container}>
-
-      <View style={styles.header}>
-        <FoodHeader />
-      </View>
-
       <View style={styles.body}>
         {/* <FoodList/> */}
-        <FoodAndMaterialNavigator/>
+        <FoodAndMaterialNavigator />
       </View>
-
     </View>
   );
 };
@@ -28,11 +21,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    flex: 0.25
+    flex: 0.25,
   },
   body: {
-    flex: 0.75
-  }
+    flex: 1,
+  },
 });
 
 export default Food;

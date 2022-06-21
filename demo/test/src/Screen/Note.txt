@@ -1,0 +1,35 @@
+BMR = (9.99* can nang) + (6.25* chieu cao) - (4.92 * tuoi) - K
+nam: K = 5
+nu: K = -165
+
+TDEE = BMR * R
+it hoat dong: R = 1.2
+hoat dong nhe, tuan 1-3: R = 1.375
+hoat dong vua, tuan 4-5: R = 1.55
+hoat dong nhieu 6-7: R = 1.725
+
+BMI = can nang / (chieu cao * chieu cao)
+<18.5: duoi chuan
+18.5 - 24.9: binh thuong
+25 - 29.9: thua can
+>30 beo phi
+
+
+// tính luong carbs, protein, chat beo
+1. Chế độ ăn Moderate Carb (30% protein/ 35% fat/ 35% carb)
+
+Với chế độ ăn này bạn sẽ có MACRO như sau:
+
+Số g protein = (TDEE +/- n x 7700/ 30) x 30 /100 / 4
+
+Số g fat = (TDEE +/- n x 7700/ 30)  x 35 / 100 / 9
+
+Số g carb = (TDEE +/- n x 7700/ 30) x 35 / 100 / 4
+
+Chú thích: 
+
+Tại sao lại có những con số 30/100, 35/100 => đó chính là tỉ lệ 30%, 35%.
+
+Tại sao lại chia cho 4 hoăc 9. Vì lượng calories của protein là 4, chất béo là 9 và carb là 4.
+
+Nếu bạn muốn tăng n kg trong 1 tháng thì sử dụng + n x 7700/30. Và giảm n kg thì sử dụng - n x 7700/ 30.
