@@ -3,8 +3,16 @@ import React from 'react';
 import Pie from 'react-native-pie';
 import Root from './src/Screen';
 
+import {Provider} from 'react-redux';
+
+import {store} from './src/Redux/store';
+
 const App = () => {
-  return <Root />;
+  return (
+    <Provider store={store}>
+      <Root />
+    </Provider>
+  );
 };
 const styles = StyleSheet.create({});
 export default App;

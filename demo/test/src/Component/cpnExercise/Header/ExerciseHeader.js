@@ -3,27 +3,11 @@ import React, {Component} from 'react';
 import COLORS from '../../../Constraint/Color';
 import {Searchbar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
-// export default class ExerciseHeader extends Component {
-//   render() {
-//     return (
-//       <View  style={styles.container}>
-
-//         <Searchbar style={styles.searchBar} placeholder='Tìm bài tập . . .' inputStyle={{fontSize: 15}}/>
-
-//         <TouchableOpacity style={styles.addExerciseContainer}>
-
-//             <Icon name='fire' size={25} style={styles.icon}/>
-//             <Text style={styles.buttonText}> Thêm bài tập </Text>
-
-//         </TouchableOpacity>
-
-//       </View>
-//     )
-//   }
-// }
+import {StackActions, useNavigation} from '@react-navigation/native';
 
 const ExerciseHeader = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Searchbar
@@ -32,7 +16,9 @@ const ExerciseHeader = () => {
         inputStyle={{fontSize: 15}}
       />
 
-      <TouchableOpacity style={styles.addExerciseContainer}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('AddTheDuc')}
+        style={styles.addExerciseContainer}>
         <Icon name="fire" size={25} style={styles.icon} />
         <Text style={styles.buttonText}> Thêm bài tập </Text>
       </TouchableOpacity>

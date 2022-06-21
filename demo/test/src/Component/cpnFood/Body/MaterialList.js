@@ -11,8 +11,14 @@ import SearchMaterial from '../Header/SearchMaterial';
 import COLORS from '../../../Constraint/Color';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
+import {useSelector} from 'react-redux';
+import {connect, database} from '../../../FirebaseConfig';
+import {ref, set, push, remove, onValue} from 'firebase/database';
+import {useState} from 'react';
+import {useEffect} from 'react';
 
-const MtrItem = ({name, value, calo}) => {
+const MtrItem = ({name, value, calo, user}) => {
+  console.log(user);
   return (
     <View
       style={{
@@ -71,6 +77,35 @@ const MtrItem = ({name, value, calo}) => {
 
 const MaterialList = () => {
   const navigation = useNavigation();
+  const {user} = useSelector(state => state.userReducer);
+
+  const [listdata, setListdata] = useState([]);
+  //load data
+  useEffect(() => {
+    const starCountRef = ref(database, 'users/' + user + '/ThucPham');
+    onValue(starCountRef, snapshot => {
+      // const data = snapshot.val();
+      let arr = [];
+      snapshot.forEach(function (child) {
+        var childData = child.val();
+        arr.push({
+          key: child.key,
+          cBeo: childData.cBeo,
+          cDam: childData.cDam,
+          carbs: childData.carbs,
+          kcal: childData.kcal,
+          kluong: childData.kluong,
+          tenTP: childData.tenTP,
+        });
+        // console.log(childData);
+      });
+      setListdata(arr);
+      // console.log(data.valueOf());
+    });
+  }, []);
+  console.log(listdata);
+  console.log(listdata.length);
+  // console.log(user);
   return (
     <View style={styles.container}>
       <SearchMaterial />
@@ -101,7 +136,18 @@ const MaterialList = () => {
           elevation: 8,
         }}>
         <ScrollView style={{width: '100%', padding: 8}}>
-          <MtrItem name={'Trứng gà'} value={100} calo={50} />
+          {listdata.map(item => {
+            return (
+              <MtrItem
+                key={item.key}
+                name={item.tenTP}
+                value={item.kluong}
+                calo={item.kcal}
+                user={user}
+              />
+            );
+          })}
+
           {/* <MtrItem />
           <MtrItem /> */}
         </ScrollView>
