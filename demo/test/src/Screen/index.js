@@ -2,7 +2,7 @@ import {View, Text, Image} from 'react-native';
 import React from 'react';
 import Home from './Home';
 import Food from './Food';
-import addFood from './AddFood';
+
 import Exercise from './Exercise';
 import Info from './Info';
 import Login from './Login';
@@ -11,7 +11,7 @@ import UpdateBMR from './UpdateBMR';
 import Energy from './Energy';
 import BMR from './BMR';
 import Test from './Test';
-import AddFood from './AddFood';
+
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import AddFood from './addFood';
@@ -46,8 +46,8 @@ const Root = () => {
         <Stack.Screen name="Target" component={Target} />
         <Stack.Screen name="TKChiSo" component={TKChiSo} />
         <Stack.Screen name="AddFood" component={AddFood} />
-        <Stack.Screen name="SignIn" component={SignIn}/>
-        <Stack.Screen name="SignUp" component={SignUp}/> 
+        <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="AddMaterial" component={AddMaterial} />
         <Stack.Screen name="AddTheDuc" component={AddTheDuc} />
       </Stack.Navigator>

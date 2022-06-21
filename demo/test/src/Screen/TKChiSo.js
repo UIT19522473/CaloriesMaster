@@ -27,6 +27,7 @@ import {userLogin} from '../Redux/actions/userAction';
 
 import {database} from '../FirebaseConfig';
 import {set, push, ref} from 'firebase/database';
+import {useSelector} from 'react-redux';
 
 const Header = () => {
   return (
@@ -67,6 +68,8 @@ const Header = () => {
 };
 
 const TKChiSo = ({route}) => {
+  //get User
+  const {user} = useSelector(state => state.userReducer);
   // const [date, setDate] = useState(new Date());
   const [date, setDate] = useState(new Date());
 
@@ -86,7 +89,6 @@ const TKChiSo = ({route}) => {
   const phut = route.params.phut;
   const sex = route.params.sex;
   const weight = route.params.weight;
-  
 
   //tinh BMI
   const BMI = Math.round((weight / ((height * height) / 10000)) * 100) / 100;
@@ -124,7 +126,7 @@ const TKChiSo = ({route}) => {
 
   //add BMR
   const addBMR = () => {
-    set(ref(database, 'users/demo1/BMR/'), {
+    set(ref(database, 'users/' + user + '/BMR/'), {
       phut: phut,
       ngay: ngay,
       sex: sex,
@@ -135,7 +137,7 @@ const TKChiSo = ({route}) => {
   };
   //add macroVitamin
   const addMacroVitamin = () => {
-    set(ref(database, 'users/demo1/MacroVitamin/'), {
+    set(ref(database, 'users/' + user + '/MacroVitamin/'), {
       Calo: sumCalo,
       Carbs: 0.4,
       ChatBeo: 0.3,
@@ -144,7 +146,7 @@ const TKChiSo = ({route}) => {
   };
   //add CanNang
   const addWeight = () => {
-    set(ref(database, 'users/demo1/CanNang/' + Key), {
+    set(ref(database, 'users/' + user + '/CanNang/' + Key), {
       Time: dateValue,
       Value: weight,
     });
@@ -154,15 +156,15 @@ const TKChiSo = ({route}) => {
   const addHome = () => {
     console.log('addHome');
     // key theo thời gian
-    set(ref(database, 'users/demo1/Home/' + Key), {
+    set(ref(database, 'users/' + user + '/Home/' + Key), {
       Time: dateValue,
     });
     // add cân nặng hiện tại
-    set(ref(database, 'users/demo1/Home/' + Key + '/CanNang'), {
+    set(ref(database, 'users/' + user + '/Home/' + Key + '/CanNang'), {
       Value: weight,
     });
     //add Calories phần màu xanh
-    set(ref(database, 'users/demo1/Home/' + Key + '/Calories'), {
+    set(ref(database, 'users/' + user + '/Home/' + Key + '/Calories'), {
       CanNap: sumCalo,
       Carbs: 0,
       ChatBeo: 0,
@@ -171,7 +173,7 @@ const TKChiSo = ({route}) => {
       TieuHao: 0,
     });
     //add Water
-    set(ref(database, 'users/demo1/Home/' + Key + '/Water'), {
+    set(ref(database, 'users/' + user + '/Home/' + Key + '/Water'), {
       DaUong: 0,
     });
   };
@@ -181,7 +183,7 @@ const TKChiSo = ({route}) => {
   const sendUser = name => dispatch(userLogin(name));
 
   const addData = () => {
-    sendUser('demo1');
+    sendUser(user);
 
     addBMR();
     addMacroVitamin();

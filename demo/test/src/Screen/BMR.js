@@ -15,6 +15,8 @@ import {database} from '../FirebaseConfig';
 import {set, push, ref} from 'firebase/database';
 import {StackActions, useNavigation} from '@react-navigation/native';
 
+import {useSelector} from 'react-redux';
+
 const Submit = (phut, ngay, sex, height, weight, age) => {
   set(ref(database, 'users/tuan/BMR/'), {
     phut: phut,
@@ -25,6 +27,7 @@ const Submit = (phut, ngay, sex, height, weight, age) => {
     age: age,
   });
 };
+// console.log('BMR');
 
 const BMR = () => {
   const [phut, setPhut] = useState('');
@@ -34,6 +37,10 @@ const BMR = () => {
   const [weight, setWeight] = useState(50);
   const [age, setAge] = useState(18);
   const navigation = useNavigation();
+
+  //get User
+  const {user} = useSelector(state => state.userReducer);
+  console.log('BMR', user);
 
   return (
     <ScrollView style={{flex: 1}}>

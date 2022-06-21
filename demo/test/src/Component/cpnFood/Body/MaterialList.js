@@ -78,6 +78,7 @@ const MtrItem = ({name, value, calo, user}) => {
 const MaterialList = () => {
   const navigation = useNavigation();
   const {user} = useSelector(state => state.userReducer);
+  console.log(user);
 
   const [listdata, setListdata] = useState([]);
   //load data
@@ -103,8 +104,8 @@ const MaterialList = () => {
       // console.log(data.valueOf());
     });
   }, []);
-  console.log(listdata);
-  console.log(listdata.length);
+  // console.log(listdata);
+  // console.log(listdata.length);
   // console.log(user);
   return (
     <View style={styles.container}>
