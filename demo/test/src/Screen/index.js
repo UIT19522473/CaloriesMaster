@@ -2,7 +2,7 @@ import {View, Text, Image} from 'react-native';
 import React from 'react';
 import Home from './Home';
 import Food from './Food';
-import addFood from './addFood';
+import addFood from './AddFood';
 import Exercise from './Exercise';
 import Info from './Info';
 import Login from './Login';
@@ -11,7 +11,9 @@ import UpdateBMR from './UpdateBMR';
 import Energy from './Energy';
 import BMR from './BMR';
 import Test from './Test';
-import AddFood from './addFood';
+import AddFood from './AddFood';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
 // import FirebaseConfig from './FirebaseConfig';
 
 // import DemoBack from '../Component/cpnHome/Body/DemoBack';
@@ -38,6 +40,8 @@ const Root = () => {
         <Stack.Screen name="Energy" component={Energy} />
         <Stack.Screen name="BMR" component={BMR} />
         <Stack.Screen name="AddFood" component={AddFood} />
+        <Stack.Screen name="SignIn" component={SignIn}/>
+        <Stack.Screen name="SignUp" component={SignUp}/> 
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -65,7 +69,7 @@ function MainBottomTab() {
         }}
       />
       <Tab.Screen
-        name="addFood"
+        name="Food"
         component={Food}
         options={{
           tabBarIcon: ({focused}) => (

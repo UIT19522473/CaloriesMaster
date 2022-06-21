@@ -13,7 +13,7 @@ import FacebookSignInButton from '../Component/cpnLogin/Body/FacebookSignInButto
 import EmailSignInButton from '../Component/cpnLogin/Body/EmailSignInButton';
 import background_image from '../Image/background_login.png';
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground

@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Octicons';
 import COLORS from '../../../Constraint/Color';
+import {useNavigation} from '@react-navigation/native';
 
 // export default class EmailSignInButton extends Component {
 //   render() {
@@ -25,8 +26,11 @@ import COLORS from '../../../Constraint/Color';
 // }
 
 const EmailSignInButton = props => {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={props.onPress} style={styles.button}>
+    <TouchableOpacity onPress={() => {
+      navigation.navigate('SignIn');
+    }} style={styles.button}>
       <View>
         <Icon name="mail" style={styles.icon} size={25} />
         <Text style={styles.buttonText} backgroundColor={props.backgroundColor}>
