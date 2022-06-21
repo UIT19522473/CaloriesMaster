@@ -22,6 +22,9 @@ import CardTDEE from '../Component/cpnTkChiSo/CardTDEE';
 import {FloatingAction} from 'react-native-floating-action';
 import {useNavigation} from '@react-navigation/native';
 
+import {useDispatch} from 'react-redux';
+import {userLogin} from '../Redux/actions/userAction';
+
 import {database} from '../FirebaseConfig';
 import {set, push, ref} from 'firebase/database';
 
@@ -83,6 +86,7 @@ const TKChiSo = ({route}) => {
   const phut = route.params.phut;
   const sex = route.params.sex;
   const weight = route.params.weight;
+  
 
   //tinh BMI
   const BMI = Math.round((weight / ((height * height) / 10000)) * 100) / 100;
@@ -104,7 +108,6 @@ const TKChiSo = ({route}) => {
   const BMR = 9.99 * weight + 6.25 * height - 4.92 * age - K;
   const TDEE = Math.round(R * BMR);
 
-  const navigation = useNavigation();
   // console.log('TKChiSo', route.params);
   // console.log(BMR);
   // console.log('TDEE', TDEE);
@@ -173,13 +176,20 @@ const TKChiSo = ({route}) => {
     });
   };
 
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
+  const sendUser = name => dispatch(userLogin(name));
+
   const addData = () => {
+    sendUser('demo1');
+
     addBMR();
     addMacroVitamin();
     addWeight();
-
     //data home Screen
     addHome();
+
+    navigation.navigate('MainBottomTab');
   };
 
   return (

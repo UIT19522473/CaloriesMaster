@@ -16,6 +16,8 @@ const HEADER_MIN_HEIGHT = 0;
 const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
 import {FloatingAction} from 'react-native-floating-action';
 
+import {useSelector} from 'react-redux';
+
 const actions = [
   {
     text: 'Tập luyện',
@@ -57,14 +59,18 @@ const Home = () => {
     extrapolate: 'clamp',
   });
 
+  const {user} = useSelector(state => state.userReducer);
+  console.log(user);
+
   return (
     <View style={styles.fill}>
       <ScrollView
         style={styles.fill}
         scrollEventThrottle={16}
-        onScroll={Animated.event([
-          {nativeEvent: {contentOffset: {y: scrollY}}},
-        ])}>
+        onScroll={Animated.event(
+          [{nativeEvent: {contentOffset: {y: scrollY}}}],
+          // {useNativeDriver: true},
+        )}>
         <View style={styles.body}>
           <Body />
         </View>

@@ -13,7 +13,14 @@ import FacebookSignInButton from '../Component/cpnLogin/Body/FacebookSignInButto
 import EmailSignInButton from '../Component/cpnLogin/Body/EmailSignInButton';
 import background_image from '../Image/background_login.png';
 
+import {useDispatch} from 'react-redux';
+import {userLogin} from '../Redux/actions/userAction';
+
 const Login = ({navigation}) => {
+  const dispatch = useDispatch();
+
+  const login = name => dispatch(userLogin(name));
+
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -30,7 +37,8 @@ const Login = ({navigation}) => {
       <Button
         title="MainPage >>"
         onPress={() => {
-          navigation.navigate('MainBottomTab', {package: 'hello'});
+          login('demo1');
+          navigation.navigate('MainBottomTab');
         }}></Button>
 
       <TouchableOpacity

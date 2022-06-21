@@ -14,6 +14,7 @@ import Test from './Test';
 import AddFood from './addFood';
 import AddMaterial from './AddMaterial';
 import TKChiSo from './TKChiSo';
+import AddTheDuc from './AddTheDuc';
 // import FirebaseConfig from './FirebaseConfig';
 
 // import DemoBack from '../Component/cpnHome/Body/DemoBack';
@@ -43,6 +44,7 @@ const Root = () => {
         <Stack.Screen name="TKChiSo" component={TKChiSo} />
         <Stack.Screen name="AddFood" component={AddFood} />
         <Stack.Screen name="AddMaterial" component={AddMaterial} />
+        <Stack.Screen name="AddTheDuc" component={AddTheDuc} />
       </Stack.Navigator>
     </NavigationContainer>
   );

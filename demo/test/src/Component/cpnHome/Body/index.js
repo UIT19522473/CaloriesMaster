@@ -107,8 +107,8 @@ const Body = () => {
           paddingHorizontal: 16,
           paddingVertical: 16,
         }}>
-        <TitleWater />
-        <AddWater />
+        {/* <TitleWater /> */}
+        {/* <AddWater /> */}
         <ListCard />
         <TitleWeight />
         <ChartWeight />
